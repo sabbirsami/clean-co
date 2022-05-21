@@ -3,7 +3,7 @@ module.exports = {
     daisyui: {
         themes: [
             {
-                mytheme: {
+                light: {
                     primary: "#176F6B",
                     secondary: "#FFC000",
                     accent: "#FFEDD5",
@@ -15,6 +15,7 @@ module.exports = {
                     error: "#FA5C5C",
                 },
             },
+            // "dark",
         ],
     },
     plugins: [require("daisyui")],
