@@ -5,8 +5,14 @@ import About from "./Components/About/About";
 import Services from "./Components/Services/Services";
 import Contact from "./Components/Contact/Contact";
 import Login from "./Components/Login/Login";
+import AOS from "aos";
+import "aos/dist/aos.css";
+import { useEffect } from "react";
 
 function App() {
+    useEffect(() => {
+        AOS.init();
+    }, []);
     return (
         <>
             <Navbar>

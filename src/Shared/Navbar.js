@@ -1,4 +1,4 @@
-import { Link, NavLink } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 const Navbar = ({ children }) => {
     const navItem = (
@@ -41,15 +41,15 @@ const Navbar = ({ children }) => {
                     class="dropdown-content menu p-2 shadow bg-base-100 w-52"
                 >
                     <li className="rounded-none">
-                        <a>Item 1</a>
+                        <p>Item 1</p>
                     </li>
                     <li>
-                        <a className="rounded-none">Item 2</a>
+                        <p className="rounded-none">Item 2</p>
                     </li>
                 </ul>
             </li>
 
-            <label class="swap swap-rotate ">
+            <label class="swap swap-rotate lg:ml-3">
                 <input data-toggle-theme="light , dark" type="checkbox" />
 
                 <svg
