@@ -74,7 +74,7 @@ const Navbar = ({ children }) => {
         <div class="drawer drawer-end">
             <input id="my-drawer-3" type="checkbox" class="drawer-toggle" />
             <div class="drawer-content flex flex-col">
-                <div class="w-full navbar bg-base-100 px-0 lg:px-20">
+                <div class="w-full navbar fixed z-50 top-0 bg-base-100 px-0 lg:px-20">
                     <div class="flex-1 px-2 mx-2 text-2xl">Clean Co.</div>
                     <div class="flex-none lg:hidden">
                         <label
