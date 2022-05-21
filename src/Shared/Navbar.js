@@ -98,7 +98,7 @@ const Navbar = ({ children }) => {
                     </div>
 
                     <div class="flex-none hidden lg:block">
-                        <ul class="menu menu-horizontal gap-x-2">{navItem}</ul>
+                        <ul class="menu menu-horizontal ">{navItem}</ul>
                     </div>
                 </div>
                 {children}
