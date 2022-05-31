@@ -1,6 +1,9 @@
 import { NavLink } from "react-router-dom";
+import { useState } from "react";
 
 const Navbar = ({ children }) => {
+    const [dark, setDark] = useState(false);
+
     const navItem = (
         <>
             <li>
@@ -50,7 +53,7 @@ const Navbar = ({ children }) => {
             </li>
 
             <label class="swap swap-rotate lg:ml-3">
-                <input data-toggle-theme="light , dark" type="checkbox" />
+                <input onClick={() => setDark(!dark)} type="checkbox" />
 
                 <svg
                     class="swap-on fill-current w-8 h-8"
@@ -71,14 +74,14 @@ const Navbar = ({ children }) => {
         </>
     );
     return (
-        <div class="drawer drawer-end">
+        <div class="drawer drawer-end " data-theme={dark ? "dark" : "light"}>
             <input id="my-drawer-3" type="checkbox" class="drawer-toggle" />
             <div class="drawer-content flex flex-col">
                 <div class="w-full navbar fixed z-50 top-0 bg-base-100 px-0 lg:px-20">
                     <div class="flex-1 px-2 mx-2 text-2xl">Clean Co.</div>
                     <div class="flex-none lg:hidden">
                         <label
-                            for="my-drawer-3"
+                            htmlFor="my-drawer-3"
                             class="btn btn-square btn-ghost"
                         >
                             <svg
@@ -104,7 +107,7 @@ const Navbar = ({ children }) => {
                 {children}
             </div>
             <div class="drawer-side ">
-                <label for="my-drawer-3" class="drawer-overlay"></label>
+                <label htmlFor="my-drawer-3" class="drawer-overlay"></label>
                 <ul class="menu p-4 overflow-y-auto w-80 bg-base-100">
                     {navItem}
                 </ul>
