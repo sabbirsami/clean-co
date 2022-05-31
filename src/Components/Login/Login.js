@@ -42,7 +42,9 @@ const Login = () => {
                         </div>
                         <div className="divider">OR</div>
                         <div className="form-control mt-6">
-                            <button className="btn btn-primary">Login</button>
+                            <button className="btn btn-outline-primary">
+                                Login with google
+                            </button>
                         </div>
                     </div>
                 </div>
