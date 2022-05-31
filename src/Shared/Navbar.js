@@ -1,8 +1,11 @@
-import { NavLink } from "react-router-dom";
+import { NavLink, useLocation } from "react-router-dom";
 import { useState } from "react";
+import useAdmin from "../hooks/useAdmin";
 
 const Navbar = ({ children }) => {
     const [dark, setDark] = useState(false);
+    const { pathname } = useLocation();
+    const [admin] = useAdmin();
 
     const navItem = (
         <>
@@ -31,11 +34,13 @@ const Navbar = ({ children }) => {
                     Login
                 </NavLink>
             </li>
-            <li>
-                <NavLink className="m-1" to="/dashboard">
-                    Dashboard
-                </NavLink>
-            </li>
+            {admin && (
+                <li>
+                    <NavLink className="m-1" to="/dashboard">
+                        Dashboard
+                    </NavLink>
+                </li>
+            )}
 
             <li class="dropdown dropdown-hover dropdown-end">
                 <label
@@ -83,6 +88,28 @@ const Navbar = ({ children }) => {
             <input id="my-drawer-3" type="checkbox" class="drawer-toggle" />
             <div class="drawer-content flex flex-col">
                 <div class="w-full navbar fixed z-50 top-0 bg-base-100 px-0 lg:px-20">
+                    {pathname.includes("dashboard") && (
+                        <label
+                            tabindex="0"
+                            for="my-drawer-2"
+                            class="btn btn-ghost lg:hidden "
+                        >
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                class="h-5 w-5"
+                                fill="none"
+                                viewBox="0 0 24 24"
+                                stroke="currentColor"
+                            >
+                                <path
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    stroke-width="2"
+                                    d="M4 6h16M4 12h16M4 18h7"
+                                />
+                            </svg>
+                        </label>
+                    )}
                     <div class="flex-1 px-2 mx-2 text-2xl">Clean Co.</div>
                     <div class="flex-none lg:hidden">
                         <label

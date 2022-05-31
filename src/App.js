@@ -32,11 +32,7 @@ function App() {
                     ></Route>
                     <Route
                         path="/dashboard"
-                        element={
-                            <AdminRoute>
-                                <Dashboard></Dashboard>
-                            </AdminRoute>
-                        }
+                        element={<Dashboard></Dashboard>}
                     ></Route>
                     <Route
                         path="/contact"
