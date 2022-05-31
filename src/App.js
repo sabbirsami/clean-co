@@ -11,6 +11,8 @@ import "aos/dist/aos.css";
 import { useEffect } from "react";
 import AdminRoute from "./authentication/AdminRoute";
 import Dashboard from "./Components/Dashboard";
+import AddService from "./Components/AddService";
+import AddAdmin from "./Components/AddAdmin";
 
 function App() {
     useEffect(() => {
@@ -30,10 +32,16 @@ function App() {
                             </PrivateRoute>
                         }
                     ></Route>
-                    <Route
-                        path="/dashboard"
-                        element={<Dashboard></Dashboard>}
-                    ></Route>
+                    <Route path="/dashboard" element={<Dashboard></Dashboard>}>
+                        <Route
+                            path="add-service"
+                            element={<AddService></AddService>}
+                        ></Route>
+                        <Route
+                            path="add-admin"
+                            element={<AddAdmin></AddAdmin>}
+                        ></Route>
+                    </Route>
                     <Route
                         path="/contact"
                         element={<Contact></Contact>}
