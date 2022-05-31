@@ -9,6 +9,8 @@ import PrivateRoute from "./authentication/PrivateRoute";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import { useEffect } from "react";
+import AdminRoute from "./authentication/AdminRoute";
+import Dashboard from "./Components/Dashboard";
 
 function App() {
     useEffect(() => {
@@ -26,6 +28,14 @@ function App() {
                             <PrivateRoute>
                                 <Services></Services>
                             </PrivateRoute>
+                        }
+                    ></Route>
+                    <Route
+                        path="/dashboard"
+                        element={
+                            <AdminRoute>
+                                <Dashboard></Dashboard>
+                            </AdminRoute>
                         }
                     ></Route>
                     <Route

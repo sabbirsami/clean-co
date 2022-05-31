@@ -31,6 +31,11 @@ const Navbar = ({ children }) => {
                     Login
                 </NavLink>
             </li>
+            <li>
+                <NavLink className="m-1" to="/dashboard">
+                    Dashboard
+                </NavLink>
+            </li>
 
             <li class="dropdown dropdown-hover dropdown-end">
                 <label
